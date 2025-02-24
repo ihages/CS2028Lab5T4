@@ -5,7 +5,7 @@
 class VideoGames {
 private:
     std::string title;
-    int playtime; //Total length of the movie in minutes
+    int playtime; //Total play time of the video game
 
 public:
     //Getters

@@ -29,10 +29,6 @@ template<class T>
 bool const EntertainmentCollection<T>::isFull(){
 	return index == SIZE;
 }
-/*
-void decShelf(){
-	EntertainmentCollection<Movies> shelf;
-}
-*/
+
 
 template class EntertainmentCollection<VideoGames>;
