@@ -1,0 +1,7 @@
+﻿  main.cpp
+  Movies.cpp
+  EntertainmentCollection.cpp
+  Generating Code...
+main.obj : error LNK2019: unresolved external symbol "public: void __cdecl EntertainmentCollection<class Movies>::addItem(class Movies)" (?addItem@?$EntertainmentCollection@VMovies@@@@QEAAXVMovies@@@Z) referenced in function main
+main.obj : error LNK2019: unresolved external symbol "public: class Movies __cdecl EntertainmentCollection<class Movies>::remItem(void)" (?remItem@?$EntertainmentCollection@VMovies@@@@QEAA?AVMovies@@XZ) referenced in function main
+C:\Users\ihage\source\repos\CS2028Lab5T4\x64\Debug\CS2028Lab5T4.exe : fatal error LNK1120: 2 unresolved externals

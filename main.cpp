@@ -1,12 +1,12 @@
 #include "Movies.h"
-#include "Shelf.h"
+#include "EntertainmentCollection.h"
 
 #include <iostream>
 #include <string>
 
 int main() {
 	
-	Shelf shelf;
+	EntertainmentCollection<Movies> shelf;
 	while (true) {
 		std::cout << "\n1. Add a movie to the shelf\n2. Remove a movie from the shelf\n3. See how many movies are currently on the shelf\n4. Quit" << std::endl;
 		int opChoice = 0;
@@ -21,7 +21,7 @@ int main() {
 				std::string title;
 				std::getline(std::cin,title);
 				Movies *movie = new Movies(title);	//Dynamically create a new movie
-				shelf.addMovie(*movie);
+				shelf.addItem(*movie);
 				std::cout << title << " was added to the shelf." << std::endl;
 			}
 			catch (FullShelf) {
@@ -32,7 +32,7 @@ int main() {
 		else if (opChoice == 2) {
 			//removemovie
 			try {
-				std::cout << "\nRemoved " << shelf.remMovie().getTitle() << " from the shelf." << std::endl;
+				std::cout << "\nRemoved " << shelf.remItem().getTitle() << " from the shelf." << std::endl;
 			}
 			catch(EmptyShelf) {
 				std::cout << "Tried removing a movie when there are no movies in the shelf. Please add a movie before trying to remove." << std:: endl;
