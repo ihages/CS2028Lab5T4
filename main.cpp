@@ -1,4 +1,4 @@
-#include "Movies.h"
+#include "VideoGames.h"
 #include "EntertainmentCollection.h"
 
 #include <iostream>
@@ -6,42 +6,42 @@
 
 int main() {
 	
-	EntertainmentCollection<Movies> shelf;
+	EntertainmentCollection<VideoGames> shelf;
 	while (true) {
-		std::cout << "\n1. Add a movie to the shelf\n2. Remove a movie from the shelf\n3. See how many movies are currently on the shelf\n4. Quit" << std::endl;
+		std::cout << "\n1. Add a video game to the shelf\n2. Remove a video game from the shelf\n3. See how many video games are currently on the shelf\n4. Quit" << std::endl;
 		int opChoice = 0;
 		
 		opChoice = 0;
 		std::cin >> opChoice;
 		if (opChoice == 1) {
-			//addmovie
+			//add video game
 			try {
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Igitnore '\n' for getline
-				std::cout << "\nWhat is the title of the movie you would like to add?" << std::endl;
+				std::cout << "\nWhat is the title of the video game you would like to add?" << std::endl;
 				std::string title;
 				std::getline(std::cin,title);
-				Movies *movie = new Movies(title);	//Dynamically create a new movie
-				shelf.addItem(*movie);
+				VideoGames *videogame = new VideoGames(title);	//Dynamically create a new video game
+				shelf.addItem(*videogame);
 				std::cout << title << " was added to the shelf." << std::endl;
 			}
 			catch (FullShelf) {
-				std::cout << "Tried adding too many movies to the shelf. Try removing a movie before adding another." << std::endl;
+				std::cout << "Tried adding too many video games to the entertainment collection. Try removing a video game before adding another." << std::endl;
 			}
 
 		}
 		else if (opChoice == 2) {
-			//removemovie
+			//remove video game
 			try {
 				std::cout << "\nRemoved " << shelf.remItem().getTitle() << " from the shelf." << std::endl;
 			}
 			catch(EmptyShelf) {
-				std::cout << "Tried removing a movie when there are no movies in the shelf. Please add a movie before trying to remove." << std:: endl;
+				std::cout << "Tried removing a video game when there are no video games in the entertainment collection. Please add a video game before trying to remove." << std:: endl;
 			}
 			
 		}
 		else if (opChoice == 3) {
-			//countmovies
-			std::cout << "\nThere are " << shelf.getIndex() << " movies in the shelf." << std::endl;
+			//count video games
+			std::cout << "\nThere are " << shelf.getIndex() << " video games in the shelf." << std::endl;
 		}
 		else if (opChoice == 4) {
 			//exit the program

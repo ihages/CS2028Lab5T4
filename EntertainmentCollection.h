@@ -1,7 +1,7 @@
 #ifndef __ENTERTAINMENTCOLLECTION_HPP
 #define __ENTERTAINMENTCOLLECTION_HPP
-#include "Movies.h"
 #include "Exceptions.h"
+#include "VideoGames.h"
 
 const int SIZE = 10;
 
